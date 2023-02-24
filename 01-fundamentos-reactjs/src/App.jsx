@@ -1,7 +1,13 @@
-function App() {
+import { Post } from "./Post.jsx"
+
+export function App() {
   return (
-    <h1>Hello World!</h1>
+    <>
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+    </> 
   )
 }
-
-export default App
