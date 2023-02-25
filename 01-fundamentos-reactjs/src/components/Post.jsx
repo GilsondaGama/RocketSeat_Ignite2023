@@ -21,6 +21,18 @@ export function Post() {
         <p>Acesse e deixe seu feedback 👉 devonlane.design</p>
         <p><a href="">#uiux #userexperience</a></p>
       </div>
+
+      <form className={styles.commentForm}>
+        <strong>Deixe o seu feedback</strong>
+
+        <textarea 
+          placeholder="Escreva o seu comentário">
+        </textarea>
+      
+        <footer>
+          <button type="submit">Publicar</button>
+        </footer>
+      </form>
     </article>
   )
 }
