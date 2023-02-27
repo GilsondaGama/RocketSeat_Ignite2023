@@ -6,6 +6,51 @@ import styles from "./App.module.css"
 
 import "./global.css"
 
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: "https://github.com/GilsondaGama.png",
+      name: "Gilson da Gama",
+      role: "Web Developer"
+    },
+    content: [
+      {type: 'paragraph', content: 'Fala pessoal 👋'},
+      {type: 'paragraph', content: 'Finalmente finalizei meu novo site/portfólio. Foi um baita desafio criar todo o design e codar na unha, mas consegui 💪🏻'},
+      {type: 'link', content: 'devonlane.design'},
+    ],
+    publishedAt: new Date("2023-02-20 08:14:00"),
+  },
+  {
+    id: 2,
+    author: {
+      avatarUrl: "https://github.com/diego3g.png",
+      name: "Diego fernandes",
+      role: "CTO @Rocketseat"
+    },
+    content: [
+      {type: 'paragraph', content: 'Fala pessoal 👋'},
+      {type: 'paragraph', content: 'Finalmente finalizei meu novo site/portfólio. Foi um baita desafio criar todo o design e codar na unha, mas consegui 💪🏻'},
+      {type: 'link', content: 'devonlane.design'},
+    ],
+    publishedAt: new Date("2023-02-19 08:13:00"),
+  },
+  {
+    id: 3,
+    author: {
+      avatarUrl: "https://github.com/maikbrito.png",
+      name: "Maik Brito",
+      role: "Educator @Rocketseat"
+    },
+    content: [
+      {type: 'paragraph', content: 'Fala pessoal 👋'},
+      {type: 'paragraph', content: 'Finalmente finalizei meu novo site/portfólio. Foi um baita desafio criar todo o design e codar na unha, mas consegui 💪🏻'},
+      {type: 'link', content: 'devonlane.design'},
+    ],
+    publishedAt: new Date("2023-02-21 08:19:00"),
+  },  
+]
+
 export function App() {
   return (
     <>
@@ -15,18 +60,15 @@ export function App() {
         <Sidebar />
     
         <main>
-          <Post 
-            author="John Doe"
-            content="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          />
-          <Post 
-            author="John Doew  wefwefwe  werfwer"
-            content="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          />
-          <Post 
-            author="John Doew  wefwefwe  werfwer"
-            content="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          />
+          {posts.map(post => { 
+            return(
+              <Post 
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}
+              />
+            )
+          })}
         </main>
       </div>
     </> 
