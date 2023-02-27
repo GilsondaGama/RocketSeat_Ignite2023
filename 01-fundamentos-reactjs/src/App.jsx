@@ -17,7 +17,7 @@ const posts = [
     content: [
       {type: 'paragraph', content: 'Fala pessoal 👋'},
       {type: 'paragraph', content: 'Finalmente finalizei meu novo site/portfólio. Foi um baita desafio criar todo o design e codar na unha, mas consegui 💪🏻'},
-      {type: 'link', content: 'devonlane.design'},
+      {type: 'link', content: '#humano3d'},
     ],
     publishedAt: new Date("2023-02-20 08:14:00"),
   },
@@ -30,7 +30,7 @@ const posts = [
     },
     content: [
       {type: 'paragraph', content: 'Fala pessoal 👋'},
-      {type: 'paragraph', content: 'Finalmente finalizei meu novo site/portfólio. Foi um baita desafio criar todo o design e codar na unha, mas consegui 💪🏻'},
+      {type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam debitis accusantium soluta id corrupti, amet delectus eos error reiciendis harum iusto dolorem veniam deserunt. Autem, voluptate sequi. Enim, vero quos.'},
       {type: 'link', content: 'devonlane.design'},
     ],
     publishedAt: new Date("2023-02-19 08:13:00"),
@@ -38,13 +38,13 @@ const posts = [
   {
     id: 3,
     author: {
-      avatarUrl: "https://github.com/maikbrito.png",
-      name: "Maik Brito",
+      avatarUrl: "https://github.com/maykbrito.png",
+      name: "Mayk Brito",
       role: "Educator @Rocketseat"
     },
     content: [
       {type: 'paragraph', content: 'Fala pessoal 👋'},
-      {type: 'paragraph', content: 'Finalmente finalizei meu novo site/portfólio. Foi um baita desafio criar todo o design e codar na unha, mas consegui 💪🏻'},
+      {type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, possimus illum velit quod quo similique. Similique quidem labore eius animi totam? Incidunt temporibus animi accusantium odit numquam quo laboriosam vero.'},
       {type: 'link', content: 'devonlane.design'},
     ],
     publishedAt: new Date("2023-02-21 08:19:00"),
