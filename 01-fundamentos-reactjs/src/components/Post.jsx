@@ -34,6 +34,12 @@ export function Post({author, content, publishedAt}) {
     setNewCommentText(event.target.value)
   }
 
+  function deleteComment({comment}) {
+
+    
+    // setComments(comments.filter((comment, index) => index !== event.target.value))
+  }
+
   return (
     <article className={styles.post}>
       <header>
@@ -82,6 +88,7 @@ export function Post({author, content, publishedAt}) {
           <Comment 
             key={comment}
             content={comment} 
+            onDeleteComment={deleteComment}
           />
         ))}
       </div>
