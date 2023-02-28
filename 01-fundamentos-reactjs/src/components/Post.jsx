@@ -31,7 +31,12 @@ export function Post({author, content, publishedAt}) {
   }
 
   function handleNewCommentChange() {
+    event.target.setCustomValidity('') // reset the error message
     setNewCommentText(event.target.value)
+  }
+
+  function handleNewCommentInvalid() {  
+    event.target.setCustomValidity('O comentário não pode ficar vazio') 
   }
 
   function deleteComment(commentToDelete) {
@@ -41,6 +46,8 @@ export function Post({author, content, publishedAt}) {
     
     setComments(commentsWithoutDeletedOne)
   }
+
+  const isNewCommentEmpty = newCommentText.length === 0
 
   return (
     <article className={styles.post}>
@@ -76,12 +83,14 @@ export function Post({author, content, publishedAt}) {
           placeholder="Escreva o seu comentário"
           value={newCommentText}
           onChange={handleNewCommentChange}
-        >
-          
-        </textarea>
+          onInvalid={handleNewCommentInvalid}
+          required
+        />
       
         <footer>
-          <button type="submit">Publicar</button>
+          <button type="submit" disabled={isNewCommentEmpty}>
+            Publicar
+          </button>
         </footer>
       </form>
 
