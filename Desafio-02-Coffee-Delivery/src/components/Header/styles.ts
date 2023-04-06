@@ -4,9 +4,11 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-left: 10rem;
   
   nav {
     display: flex;
+    margin: 2rem 10rem 2rem 10rem;
 
     a {
       display: flex;
