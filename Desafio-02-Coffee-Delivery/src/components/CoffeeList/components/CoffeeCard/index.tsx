@@ -34,7 +34,8 @@ export function CoffeeCard({
   quantity,
   isAdded,
 }: CoffeeProps) {
-  const { incrementItems, decrementItems } = useContext(CoffeeContext)
+  const { incrementItems, decrementItems, addItemInCard, removeItemInCard } =
+    useContext(CoffeeContext)
 
   return (
     <CoffeeCardItem>
@@ -65,13 +66,11 @@ export function CoffeeCard({
           <Plus size={14} onClick={() => incrementItems(id)} />
         </InputContainer>
         {!isAdded ? (
-          <ButtonAddToCart>
-            {/* <ButtonAddToCart onClick={() => addItemInCard(id)}> */}
+          <ButtonAddToCart onClick={() => addItemInCard(id)}>
             <ShoppingCartSimple size={17} weight="fill" />
           </ButtonAddToCart>
         ) : (
-          <ButtonRemoveFromCart>
-            {/* <ButtonRemoveFromCart onClick={() => removeItemInCard(id)}> */}
+          <ButtonRemoveFromCart onClick={() => removeItemInCard(id)}>
             <Trash size={17} weight="fill" />
           </ButtonRemoveFromCart>
         )}

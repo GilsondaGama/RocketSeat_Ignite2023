@@ -28,10 +28,10 @@ interface ContextType {
   cart: CartProps
   incrementItems: (id: string) => void
   decrementItems: (id: string) => void
-  // addItemInCard: (id: string) => void
-  // removeItemInCard: (id: string) => void
-  // removeAll: () => void
-  // addToCard: (data: CartProps) => void
+  addItemInCard: (id: string) => void
+  removeItemInCard: (id: string) => void
+  removeAll: () => void
+  addToCard: (data: CartProps) => void
 }
 
 export const CoffeeContext = createContext({} as ContextType)
@@ -80,6 +80,55 @@ export function CoffeeContextProvider({
     )
   }
 
+  function removeItemInCard(id: string) {
+    setItemsInCard((state) =>
+      state.map((item) => {
+        if (item.id === id) {
+          item.quantity = 0
+          item.isAdded = false
+          return {
+            ...item,
+            quantity: 0,
+            isAdded: false,
+          }
+        } else {
+          return item
+        }
+      }),
+    )
+  }
+
+  function removeAll() {
+    setItemsInCard((state) =>
+      state.map((item) => {
+        return {
+          ...item,
+          quantity: 0,
+          isAdded: false,
+        }
+      }),
+    )
+  }
+
+  function addToCard(data: CartProps) {
+    setNewCart(data)
+  }
+
+  function addItemInCard(id: string) {
+    setItemsInCard((state) =>
+      state.map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            isAdded: true,
+          }
+        } else {
+          return item
+        }
+      }),
+    )
+  }
+
   return (
     <CoffeeContext.Provider
       value={{
@@ -87,10 +136,10 @@ export function CoffeeContextProvider({
         cart,
         incrementItems,
         decrementItems,
-        // addItemInCard,
-        // removeItemInCard,
-        // removeAll,
-        // addToCard,
+        addItemInCard,
+        removeItemInCard,
+        removeAll,
+        addToCard,
       }}
     >
       {children}
