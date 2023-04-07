@@ -26,7 +26,7 @@ export const HeaderContainer = styled.header`
         color: ${(props) => props.theme['yellow-light']};
         background: ${(props) => props.theme.yellow};
 
-        transition: 0.2s;
+        transition: background-color 0.2s;
       }
     }
 

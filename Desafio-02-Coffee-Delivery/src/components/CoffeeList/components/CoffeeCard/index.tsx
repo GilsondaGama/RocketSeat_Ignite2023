@@ -1,4 +1,14 @@
-import { CoffeeCardItem, TagsCard } from './styles'
+import { Minus, Plus, ShoppingCartSimple, Trash } from 'phosphor-react'
+
+import {
+  ButtonAddToCart,
+  ButtonRemoveFromCart,
+  CoffeeCardItem,
+  Footer,
+  InputContainer,
+  Price,
+  TagsCard,
+} from './styles'
 
 export interface coffeeProps {
   id: string
@@ -24,7 +34,6 @@ export function CoffeeCard({
   return (
     <CoffeeCardItem>
       <img src={photo} alt={title} />
-
       <TagsCard>
         {tags.map((tag) => {
           return (
@@ -34,12 +43,33 @@ export function CoffeeCard({
           )
         })}
       </TagsCard>
-
-      <h3>{title}</h3>
+      <h1>{title}</h1>
       <p>{description}</p>
-      <title>{price}</title>
-      {/* R${' '}
-      <span>{price.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</span> */}
+
+      <Footer>
+        <Price>
+          R${' '}
+          <span>
+            {price.toLocaleString('pt-br', { minimumFractionDigits: 2 })}
+          </span>
+        </Price>
+
+        <InputContainer>
+          <Minus size={14} />
+          {quantity}
+          <Plus size={14} />
+        </InputContainer>
+
+        {!isAdded ? (
+          <ButtonAddToCart>
+            <ShoppingCartSimple size={17} weight="fill" />
+          </ButtonAddToCart>
+        ) : (
+          <ButtonRemoveFromCart>
+            <Trash size={17} weight="fill" />
+          </ButtonRemoveFromCart>
+        )}
+      </Footer>
     </CoffeeCardItem>
   )
 }
