@@ -1,14 +1,29 @@
 import { CoffeeCard } from './components/CoffeeCard'
 import { ListContainer, OurCoffees } from './styles'
 
-import { data } from '../../assets/mock/data'
+import { useContext } from 'react'
+import { CoffeeContext } from '../../contexts/coffeeContext'
+
+interface CoffeeListProps {
+  data: {
+    id: string
+    title: string
+    description: string
+    tags: string[]
+    photo: string
+    price: number
+    quantity: number
+    isAdded: boolean
+  }[]
+}
 
 export function CoffeeList() {
+  const { items } = useContext(CoffeeContext)
   return (
     <>
       <OurCoffees>Nossos cafés</OurCoffees>
       <ListContainer>
-        {data.map((coffee) => {
+        {items.map((coffee) => {
           return (
             <CoffeeCard
               key={coffee.id}

@@ -1,3 +1,6 @@
+import { useContext } from 'react'
+import { CoffeeContext } from '../../../../contexts/coffeeContext'
+
 import { Minus, Plus, ShoppingCartSimple, Trash } from 'phosphor-react'
 
 import {
@@ -10,7 +13,7 @@ import {
   TagsCard,
 } from './styles'
 
-export interface coffeeProps {
+interface CoffeeProps {
   id: string
   title: string
   description: string
@@ -30,7 +33,9 @@ export function CoffeeCard({
   price,
   quantity,
   isAdded,
-}: coffeeProps) {
+}: CoffeeProps) {
+  const { incrementItems } = useContext(CoffeeContext)
+
   return (
     <CoffeeCardItem>
       <img src={photo} alt={title} />
@@ -53,19 +58,21 @@ export function CoffeeCard({
             {price.toLocaleString('pt-br', { minimumFractionDigits: 2 })}
           </span>
         </Price>
-
         <InputContainer>
           <Minus size={14} />
+          {/* <Minus size={14} onClick={() => decrementItems(id)} /> */}
           {quantity}
-          <Plus size={14} />
-        </InputContainer>
 
+          <Plus size={14} onClick={() => incrementItems(id)} />
+        </InputContainer>
         {!isAdded ? (
           <ButtonAddToCart>
+            {/* <ButtonAddToCart onClick={() => addItemInCard(id)}> */}
             <ShoppingCartSimple size={17} weight="fill" />
           </ButtonAddToCart>
         ) : (
           <ButtonRemoveFromCart>
+            {/* <ButtonRemoveFromCart onClick={() => removeItemInCard(id)}> */}
             <Trash size={17} weight="fill" />
           </ButtonRemoveFromCart>
         )}

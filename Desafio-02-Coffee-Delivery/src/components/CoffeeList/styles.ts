@@ -6,6 +6,7 @@ export const ListContainer = styled.div`
   flex-wrap: wrap;
   column-gap: 2rem;
   row-gap: 40px;
+  padding-bottom: 10rem;
 
   margin-left: calc(50% - 1120px / 2);
   width: 1120px;
