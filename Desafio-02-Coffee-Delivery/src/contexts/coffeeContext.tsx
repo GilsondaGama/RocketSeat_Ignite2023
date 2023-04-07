@@ -27,7 +27,7 @@ interface ContextType {
   items: CoffeeProps[]
   cart: CartProps
   incrementItems: (id: string) => void
-  // decrementItems: (id: string) => void
+  decrementItems: (id: string) => void
   // addItemInCard: (id: string) => void
   // removeItemInCard: (id: string) => void
   // removeAll: () => void
@@ -65,13 +65,28 @@ export function CoffeeContextProvider({
     )
   }
 
+  function decrementItems(id: string) {
+    setItemsInCard((state) =>
+      state.map((item) => {
+        if (item.id === id && item.quantity > 0) {
+          return {
+            ...item,
+            quantity: item.quantity - 1,
+          }
+        } else {
+          return item
+        }
+      }),
+    )
+  }
+
   return (
     <CoffeeContext.Provider
       value={{
         items: itemsInCard,
         cart,
         incrementItems,
-        // decrementItems,
+        decrementItems,
         // addItemInCard,
         // removeItemInCard,
         // removeAll,

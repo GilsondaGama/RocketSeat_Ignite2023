@@ -34,7 +34,7 @@ export function CoffeeCard({
   quantity,
   isAdded,
 }: CoffeeProps) {
-  const { incrementItems } = useContext(CoffeeContext)
+  const { incrementItems, decrementItems } = useContext(CoffeeContext)
 
   return (
     <CoffeeCardItem>
@@ -59,8 +59,7 @@ export function CoffeeCard({
           </span>
         </Price>
         <InputContainer>
-          <Minus size={14} />
-          {/* <Minus size={14} onClick={() => decrementItems(id)} /> */}
+          <Minus size={14} onClick={() => decrementItems(id)} />
           {quantity}
 
           <Plus size={14} onClick={() => incrementItems(id)} />
