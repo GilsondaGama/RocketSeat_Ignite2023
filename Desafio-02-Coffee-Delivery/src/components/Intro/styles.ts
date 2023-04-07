@@ -38,19 +38,14 @@ export const IntroBackgroundImage = styled.header`
     width: 588px;
     height: 52px;
   }
-` // importando as variáveis CSS
+`
 
 export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 270px 1fr;
   grid-template-columns: 270px 1fr;
-
-  /* grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr); */
   row-gap: 20px;
   column-gap: 0px;
-  /* gap: 20px;
-  grid-column-gap: 10px */
 
   width: 567px;
   height: 84px;

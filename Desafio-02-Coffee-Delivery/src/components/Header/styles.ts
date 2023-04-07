@@ -5,7 +5,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   margin-left: 10rem;
-  
+
   nav {
     display: flex;
     margin: 2rem 10rem 2rem 10rem;
@@ -16,19 +16,18 @@ export const HeaderContainer = styled.header`
       padding: 0.5rem;
       border-radius: 6px;
       margin-left: 0.25rem;
-      
+
       cursor: pointer;
-      
+
       color: ${(props) => props.theme['yellow-dark']};
       background: ${(props) => props.theme['yellow-light']};
-      
+
       &:hover {
         color: ${(props) => props.theme['yellow-light']};
         background: ${(props) => props.theme.yellow};
-        
-        transition background-color 0.2s;
+
+        transition: 0.2s;
       }
-      
     }
 
     span {
@@ -38,7 +37,7 @@ export const HeaderContainer = styled.header`
       gap: 0.25rem;
       padding: 0.5rem;
       border-radius: 6px;
-      
+
       color: ${(props) => props.theme['purple-dark']};
       background: ${(props) => props.theme['purple-light']};
 
