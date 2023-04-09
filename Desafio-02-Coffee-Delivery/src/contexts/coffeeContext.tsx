@@ -26,6 +26,7 @@ interface CartProps {
 interface ContextType {
   items: CoffeeProps[]
   cart: CartProps
+  coffeeQuantity: number
   incrementItems: (id: string) => void
   decrementItems: (id: string) => void
   addItemInCard: (id: string) => void
@@ -45,6 +46,7 @@ export function CoffeeContextProvider({
 }: CoffeeContextProviderProps) {
   const [itemsInCard, setItemsInCard] = useState<CoffeeProps[]>([])
   const [cart, setNewCart] = useState({} as CartProps)
+  const [coffeeQuantity, setCoffeeQuantity] = useState(0)
 
   useEffect(() => {
     setItemsInCard(data)
@@ -86,6 +88,7 @@ export function CoffeeContextProvider({
         if (item.id === id) {
           item.quantity = 0
           item.isAdded = false
+          setCoffeeQuantity((state) => state - 1)
           return {
             ...item,
             quantity: 0,
@@ -101,6 +104,7 @@ export function CoffeeContextProvider({
   function removeAll() {
     setItemsInCard((state) =>
       state.map((item) => {
+        setCoffeeQuantity((state) => 0)
         return {
           ...item,
           quantity: 0,
@@ -118,6 +122,7 @@ export function CoffeeContextProvider({
     setItemsInCard((state) =>
       state.map((item) => {
         if (item.id === id) {
+          setCoffeeQuantity((state) => state + 1)
           return {
             ...item,
             isAdded: true,
@@ -140,6 +145,7 @@ export function CoffeeContextProvider({
         removeItemInCard,
         removeAll,
         addToCard,
+        coffeeQuantity,
       }}
     >
       {children}

@@ -31,7 +31,7 @@ export function Intro() {
             </IntroItem>
             <IntroItem>
               <IconContainer>
-                <ShoppingCart weight="fill" />
+                <Package weight="fill" />
               </IconContainer>
               <span>Embalagem mantém o café intacto</span>
             </IntroItem>
@@ -43,7 +43,7 @@ export function Intro() {
             </IntroItem>
             <IntroItem>
               <IconContainer color={defaultTheme.purple}>
-                <ShoppingCart weight="fill" />
+                <Coffee weight="fill" />
               </IconContainer>
               <span>O café chega fresquinho até você</span>
             </IntroItem>

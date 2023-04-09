@@ -8,6 +8,7 @@ export const HeaderContainer = styled.header`
 
   nav {
     display: flex;
+    align-items: center;
     margin: 2rem 10rem 2rem 10rem;
 
     a {
@@ -46,4 +47,21 @@ export const HeaderContainer = styled.header`
       }
     }
   }
+`
+
+export const ItemQuantity = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 0.5rem;
+  top: -1rem;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme['yellow-dark']};
+  color: ${({ theme }) => theme.white};
 `

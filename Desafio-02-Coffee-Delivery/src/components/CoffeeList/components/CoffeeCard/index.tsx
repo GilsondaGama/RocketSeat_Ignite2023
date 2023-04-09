@@ -6,7 +6,7 @@ import { Minus, Plus, ShoppingCartSimple, Trash } from 'phosphor-react'
 import {
   ButtonAddToCart,
   ButtonRemoveFromCart,
-  CoffeeCardItem,
+  CoffeeContainer,
   Footer,
   InputContainer,
   Price,
@@ -38,7 +38,7 @@ export function CoffeeCard({
     useContext(CoffeeContext)
 
   return (
-    <CoffeeCardItem>
+    <CoffeeContainer>
       <img src={photo} alt={title} />
       <TagsCard>
         {tags.map((tag) => {
@@ -75,6 +75,6 @@ export function CoffeeCard({
           </ButtonRemoveFromCart>
         )}
       </Footer>
-    </CoffeeCardItem>
+    </CoffeeContainer>
   )
 }
