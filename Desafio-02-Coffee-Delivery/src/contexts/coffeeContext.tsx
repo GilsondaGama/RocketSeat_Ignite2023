@@ -123,8 +123,10 @@ export function CoffeeContextProvider({
       state.map((item) => {
         if (item.id === id) {
           setCoffeeQuantity((state) => state + 1)
+
           return {
             ...item,
+            quantity: item.quantity > 0 ? item.quantity : 1,
             isAdded: true,
           }
         } else {
