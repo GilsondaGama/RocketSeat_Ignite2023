@@ -64,4 +64,4 @@ O projeto foi desenvolvido com o vite, typescript, react e o eslint.
 
 Fale comigo
 - [Instagram](https://www.instagram.com/gilsondagama)
-- [Linkedin](https://www.linkedin.com/in/gilsondagama/)
+- [Linkedin](https://github.com/GilsondaGama)
