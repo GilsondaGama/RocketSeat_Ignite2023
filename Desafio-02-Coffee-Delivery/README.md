@@ -37,7 +37,7 @@ desenvolver usei também o styled-components e os icones são da biblioteca phos
 Um detalhe especial nesta página é o uso do Radix nos componentes de radio (formas de pagamento). Com uso desta biblioteca pude usar inputs que não são os tradicionais e usar como 
 fossem. Para controlar o formulário usei o react-hook-form e para valiar os dados usei o zod.
 
-![Coffee Delivery - Checkout Filled]((https://user-images.githubusercontent.com/32863365/230877454-485a8cc8-f621-485a-b585-b8e1c363ab33.png)
+![Coffee Delivery - Checkout Filled](https://user-images.githubusercontent.com/32863365/230877454-485a8cc8-f621-485a-b585-b8e1c363ab33.png)
 
 ## Página Sucesso
 
