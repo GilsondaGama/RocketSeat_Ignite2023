@@ -13,7 +13,15 @@
       "description": "Test negative Transaction",
       "type": "outcome",
       "category": "alimento",
-      "price": -9900,
+      "price": 900,
+      "createAt": "2020-04-29T19:30:44.5052"
+    },
+    {
+      "id": "3",
+      "description": "Ignite",
+      "type": "outcome",
+      "category": "educação",
+      "price": 112,
       "createAt": "2020-04-29T19:30:44.5052"
     }
   ]
