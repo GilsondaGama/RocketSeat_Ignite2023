@@ -39,6 +39,14 @@
       "type": "outcome",
       "createdAt": "2023-04-14T22:11:42.350Z",
       "id": 5
+    },
+    {
+      "description": "Academia",
+      "price": 200,
+      "category": "saúde",
+      "type": "outcome",
+      "createdAt": "2023-04-14T23:06:14.584Z",
+      "id": 6
     }
   ]
 }
