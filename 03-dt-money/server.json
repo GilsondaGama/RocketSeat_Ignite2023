@@ -1,7 +1,7 @@
 {
-  "transaction": [
+  "transactions": [
     {
-      "id": "1",
+      "id": 1,
       "description": "Test Transaction",
       "type": "income",
       "category": "venda",
@@ -9,7 +9,7 @@
       "createdAt": "2023-04-13T22:49:26.713Z"
     },
     {
-      "id": "2",
+      "id": 2,
       "description": "Test negative Transaction",
       "type": "outcome",
       "category": "alimento",
@@ -17,12 +17,28 @@
       "createdAt": "2023-02-19T22:49:26.713Z"
     },
     {
-      "id": "3",
+      "id": 3,
       "description": "Ignite",
       "type": "outcome",
       "category": "educação",
       "price": 112,
       "createdAt": "2023-03-11T22:49:26.713Z"
+    },
+    {
+      "description": "Desenvolvimento de App",
+      "price": 4500,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2023-04-14T13:53:56.343Z",
+      "id": 4
+    },
+    {
+      "description": "Hambuerguer",
+      "price": 11,
+      "category": "Alimento",
+      "type": "outcome",
+      "createdAt": "2023-04-14T22:11:42.350Z",
+      "id": 5
     }
   ]
 }
