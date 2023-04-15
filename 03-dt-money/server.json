@@ -47,6 +47,14 @@
       "type": "outcome",
       "createdAt": "2023-04-14T23:06:14.584Z",
       "id": 6
+    },
+    {
+      "description": "Cortinas",
+      "price": 1000,
+      "category": "Cortinas",
+      "type": "income",
+      "createdAt": "2023-04-15T00:03:00.879Z",
+      "id": 7
     }
   ]
 }
