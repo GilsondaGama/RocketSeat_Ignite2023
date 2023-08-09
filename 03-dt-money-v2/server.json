@@ -5,7 +5,7 @@
     "description": "Desenvolvomento de sites",
     "type" : "income",
     "category":"Venda", 
-    "price": 14099,
+    "price": 1499,
     "createdAt": "2023-07-27T00:00:00.505Z"
     },
     {
@@ -13,7 +13,7 @@
     "description": "Compra equipamentos",
     "type" : "outcome",
     "category":"Compra", 
-    "price": 13500,
+    "price": 130,
     "createdAt": "2023-07-28T00:30:44.505Z"
     },
     {
