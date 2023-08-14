@@ -1,6 +1,19 @@
-import { ProfileBio, ProfileContainer, ProfileInfo, StyledIcon } from './styles'
+import {
+  ProfileBio,
+  ProfileContainer,
+  ProfileInfo,
+  ProfileLink,
+  ProfileName,
+  StyledIcon,
+} from './styles'
+
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faBuilding, faUserGroup } from '@fortawesome/free-solid-svg-icons'
+
+import {
+  faBuilding,
+  faUserGroup,
+  faArrowUpRightFromSquare,
+} from '@fortawesome/free-solid-svg-icons'
 
 export function Profile() {
   return (
@@ -12,7 +25,14 @@ export function Profile() {
         />
       </div>
       <ProfileBio>
-        <strong>Cameron Williamson</strong>
+        <ProfileName>
+          <strong>Cameron Williamson</strong>
+          <ProfileLink>
+            <span>GITHUB</span>
+            <StyledIcon icon={faArrowUpRightFromSquare} variant="base-blue" />
+          </ProfileLink>
+        </ProfileName>
+
         <p>
           Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
           viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat

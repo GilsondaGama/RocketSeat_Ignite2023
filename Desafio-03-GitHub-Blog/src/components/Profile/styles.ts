@@ -1,18 +1,21 @@
 import { styled } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export const StyledIcon = styled(FontAwesomeIcon)`
+interface StyledIconProps {
+  variant?: string
+}
+
+export const StyledIcon = styled(FontAwesomeIcon)<StyledIconProps>`
   font-size: 18px;
-  color: ${(props) => props.theme['base-label']};
+  color: ${(props) => props.theme[props.variant || 'base-label']};
 `
 
 export const ProfileContainer = styled.div`
+  display: flex;
   width: 864px;
   height: 212px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 0 2.5rem;
-
-  display: flex;
 
   align-items: center;
   margin-top: -5.6rem;
@@ -29,14 +32,6 @@ export const ProfileContainer = styled.div`
 export const ProfileBio = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-
-  strong {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: ${(props) => props.theme['base-title']};
-  }
 
   p {
     font-size: 1rem;
@@ -58,4 +53,22 @@ export const ProfileInfo = styled.div`
     margin-right: 1rem;
     color: ${(props) => props.theme['base-subtitle']};
   }
+`
+export const ProfileName = styled.div`
+  display: flex;
+
+  strong {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: ${(props) => props.theme['base-title']};
+  }
+`
+
+export const ProfileLink = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  position: absolute;
+  right: 10rem;
+  color: ${(props) => props.theme['base-blue']};
 `
