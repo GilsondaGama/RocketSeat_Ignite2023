@@ -56,6 +56,7 @@ export const ProfileInfo = styled.div`
 `
 export const ProfileName = styled.div`
   display: flex;
+  align-items: center;
 
   strong {
     font-size: 1.5rem;

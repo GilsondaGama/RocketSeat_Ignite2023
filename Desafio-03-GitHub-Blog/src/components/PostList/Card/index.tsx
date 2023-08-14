@@ -1,17 +1,21 @@
-import { CardContent } from './styles'
+import { CardContent, CardTitle } from './styles'
 
 export function Card() {
   return (
     <div>
       <CardContent>
-        <div>
+        <CardTitle>
           <strong>JavaScript data types and data structures</strong>
           <span>Há 1 dia</span>
-        </div>
+        </CardTitle>
         <p>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
+          consectetur totam! Vero, autem est. Placeat perspiciatis ea illum,
+          quod natus, numquam vel in sunt nihil fuga facilis inventore earum
+          ipsam. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Nostrum minima fuga dolorem debitis libero voluptatibus! Aliquam atque
+          iusto quas ex tempora nulla corrupti inventore, voluptatem ea rem
+          pariatur non suscipit!
         </p>
       </CardContent>
     </div>
