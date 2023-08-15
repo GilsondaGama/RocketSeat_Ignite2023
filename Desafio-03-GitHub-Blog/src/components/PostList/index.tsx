@@ -1,17 +1,28 @@
 import { Card } from './Card'
-import { PostListContainer } from './styles'
+import { PostInputContainer, PostInputInfo, PostListContainer } from './styles'
 
 export function PostList() {
   return (
-    <PostListContainer>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </PostListContainer>
+    <>
+      <PostInputContainer>
+        <PostInputInfo>
+          <span>Publicações</span>
+          <p>6 publicações</p>
+        </PostInputInfo>
+
+        <input type="text" placeholder="Buscar conteúdo" />
+      </PostInputContainer>
+
+      <PostListContainer>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </PostListContainer>
+    </>
   )
 }
