@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 import {
   ProfileBio,
   ProfileContainer,
@@ -15,37 +17,59 @@ import {
   faArrowUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons'
 
+interface GithubUser {
+  avatar_url: string
+  name: string
+  bio: string
+  login: string
+  company: string
+  followers: number
+  htmlUrl: string
+}
+
 export function Profile() {
+  const [githubUser, setGithubUser] = useState<GithubUser>()
+
+  async function LoadGithubUser() {
+    const response = await fetch('https://api.github.com/users/GilsondaGama')
+    const data = await response.json()
+
+    console.log(data)
+    setGithubUser(data)
+  }
+
+  useEffect(() => {
+    LoadGithubUser()
+  }, [])
+
   return (
     <ProfileContainer>
       <div>
-        <img
-          src="https://avatars.githubusercontent.com/u/32863365?s=400&u=7afa7ab9e5ce71c289862a9cd25b1691ad49274e&v=4"
-          alt=""
-        />
+        <img src={githubUser?.avatar_url} alt="" />
       </div>
       <ProfileBio>
         <ProfileName>
-          <strong>Cameron Williamson</strong>
+          <strong>{githubUser?.name}</strong>
           <ProfileLink>
             <span>GITHUB</span>
             <StyledIcon icon={faArrowUpRightFromSquare} variant="base-blue" />
           </ProfileLink>
         </ProfileName>
 
-        <p>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </p>
+        <p>{githubUser?.bio}</p>
 
         <ProfileInfo>
           <StyledIcon icon={faGithub} />
-          <span>cameronwll</span>
+          <span>{githubUser?.login}</span>
           <StyledIcon icon={faBuilding} />
-          <span>Rocketseat</span>
+          <span>{githubUser?.company}</span>
           <StyledIcon icon={faUserGroup} />
-          <span>32 seguidores</span>
+          <span>
+            {githubUser?.followers}
+            {githubUser?.followers === undefined || githubUser?.followers < 2
+              ? ' seguidor'
+              : ' seguidores'}
+          </span>
         </ProfileInfo>
       </ProfileBio>
     </ProfileContainer>
