@@ -1,11 +1,9 @@
 import { useEffect, useState, useCallback } from 'react'
 
 import {
-  ProfileBio,
   ProfileContainer,
+  ProfileDetails,
   ProfileInfo,
-  ProfileLink,
-  ProfileName,
   StyledIcon,
 } from './styles'
 
@@ -25,7 +23,7 @@ interface GithubUser {
   login: string
   company: string
   followers: number
-  htmlUrl: string
+  html_url: string
 }
 
 const userName = import.meta.env.VITE_GITHUB_USERNAME
@@ -45,17 +43,17 @@ export function Profile() {
 
   return (
     <ProfileContainer>
-      <div>
-        <img src={githubUser?.avatar_url} alt="" />
-      </div>
-      <ProfileBio>
-        <ProfileName>
-          <strong>{githubUser?.name}</strong>
-          <ProfileLink>
+      <img src={githubUser?.avatar_url} alt="" />
+
+      <ProfileDetails>
+        <header>
+          <h1>{githubUser?.name}</h1>
+
+          <a href={githubUser?.html_url} target="_blank" rel="noreferrer">
             <span>GITHUB</span>
             <StyledIcon icon={faArrowUpRightFromSquare} variant="base-blue" />
-          </ProfileLink>
-        </ProfileName>
+          </a>
+        </header>
 
         <p>{githubUser?.bio}</p>
 
@@ -72,7 +70,7 @@ export function Profile() {
               : ' seguidores'}
           </span>
         </ProfileInfo>
-      </ProfileBio>
+      </ProfileDetails>
     </ProfileContainer>
   )
 }

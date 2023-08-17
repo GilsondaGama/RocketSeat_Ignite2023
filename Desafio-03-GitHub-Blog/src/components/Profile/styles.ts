@@ -12,10 +12,13 @@ export const StyledIcon = styled(FontAwesomeIcon)<StyledIconProps>`
 
 export const ProfileContainer = styled.div`
   display: flex;
+  gap: 2rem;
+  padding: 0 2.5rem;
+
   width: 864px;
   height: 212px;
   margin: 2rem auto;
-  padding: 0 2.5rem;
+  box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
 
   align-items: center;
   margin-top: -5.6rem;
@@ -23,16 +26,12 @@ export const ProfileContainer = styled.div`
   background: ${(props) => props.theme['base-profile']};
 
   img {
-    width: 148px;
-    height: 148px;
+    max-width: 9.25rem;
     border-radius: 8px;
-    margin-right: 2rem;
   }
 `
-export const ProfileBio = styled.div`
-  display: flex;
-  flex-direction: column;
 
+export const ProfileDetails = styled.div`
   p {
     font-size: 1rem;
     font-weight: 400;
@@ -42,8 +41,31 @@ export const ProfileBio = styled.div`
 
   header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    margin-bottom: 0.5rem;
+
+    a {
+      color: ${(props) => props.theme['base-blue']};
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.7;
+        transition: opacity 0.2s;
+      }
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: ${(props) => props.theme['base-title']};
+    }
+
+    svg {
+      margin-left: 0.5rem;
+    }
   }
 `
 
@@ -59,23 +81,4 @@ export const ProfileInfo = styled.div`
     margin-right: 1rem;
     color: ${(props) => props.theme['base-subtitle']};
   }
-`
-export const ProfileName = styled.div`
-  display: flex;
-  align-items: center;
-
-  strong {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: ${(props) => props.theme['base-title']};
-  }
-`
-
-export const ProfileLink = styled.div`
-  display: flex;
-  gap: 0.5rem;
-  justify-content: space-between;
-
-  color: ${(props) => props.theme['base-blue']};
 `
