@@ -39,6 +39,12 @@ export const ProfileBio = styled.div`
     line-height: 1.75rem;
     color: ${(props) => props.theme['base-text']};
   }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `
 
 export const ProfileInfo = styled.div`
@@ -69,7 +75,7 @@ export const ProfileName = styled.div`
 export const ProfileLink = styled.div`
   display: flex;
   gap: 0.5rem;
-  position: absolute;
-  right: 10rem;
+  justify-content: space-between;
+
   color: ${(props) => props.theme['base-blue']};
 `

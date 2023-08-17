@@ -13,7 +13,10 @@ export function PostList() {
     <PostInputContainer>
       <PostInputInfo>
         <span>Publicações</span>
-        <p>6 publicações</p>
+
+        {issues.length === 0 && <p>Nenhuma publicação</p>}
+        {issues.length === 1 && <p>1 publicação</p>}
+        {issues.length > 1 && <p>{issues.length} publicações</p>}
       </PostInputInfo>
 
       <SearchForm />
