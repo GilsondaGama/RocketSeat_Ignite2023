@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 
 import {
   ProfileBio,
@@ -16,6 +16,7 @@ import {
   faUserGroup,
   faArrowUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons'
+import { api } from '../../lib/axios'
 
 interface GithubUser {
   avatar_url: string
@@ -27,20 +28,20 @@ interface GithubUser {
   htmlUrl: string
 }
 
+const userName = import.meta.env.VITE_GITHUB_USERNAME
+
 export function Profile() {
   const [githubUser, setGithubUser] = useState<GithubUser>()
 
-  async function LoadGithubUser() {
-    const response = await fetch('https://api.github.com/users/GilsondaGama')
-    const data = await response.json()
+  const LoadGithubUser = useCallback(async () => {
+    const response = await api.get(`/users/${userName}`)
 
-    console.log(data)
-    setGithubUser(data)
-  }
+    setGithubUser(response.data)
+  }, [])
 
   useEffect(() => {
     LoadGithubUser()
-  }, [])
+  }, [LoadGithubUser])
 
   return (
     <ProfileContainer>

@@ -1,28 +1,36 @@
 import { Card } from './Card'
 import { PostInputContainer, PostInputInfo, PostListContainer } from './styles'
+import { IssuesContext } from '../../context/IssuesContext'
+import { SearchForm } from './SearchForm'
+import { useContextSelector } from 'use-context-selector'
 
 export function PostList() {
-  return (
-    <>
-      <PostInputContainer>
-        <PostInputInfo>
-          <span>Publicações</span>
-          <p>6 publicações</p>
-        </PostInputInfo>
+  const issues = useContextSelector(IssuesContext, (context) => {
+    return context.issues
+  })
 
-        <input type="text" placeholder="Buscar conteúdo" />
-      </PostInputContainer>
+  return (
+    <PostInputContainer>
+      <PostInputInfo>
+        <span>Publicações</span>
+        <p>6 publicações</p>
+      </PostInputInfo>
+
+      <SearchForm />
 
       <PostListContainer>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {issues.map((issue) => {
+          return (
+            <Card
+              key={issue.id}
+              number={issue.number}
+              title={issue.title}
+              body={issue.body}
+              created_at={issue.created_at}
+            />
+          )
+        })}
       </PostListContainer>
-    </>
+    </PostInputContainer>
   )
 }
