@@ -16,20 +16,7 @@ import {
 } from './styles'
 
 import { relativeDateFormatter } from '../../../../Utils/formatter'
-
-// import { SinglePost } from '../../../../context/IssuesContext'
-
-interface SinglePost {
-  title: string
-  body: string
-  created_at: string
-  number: number
-  html_url: string
-  comments: number
-  user: {
-    login: string
-  }
-}
+import { SinglePost } from '../../../../context/IssuesContext'
 
 interface SelectedPostProps {
   postData: SinglePost
@@ -43,8 +30,6 @@ export function PostHeader({ postData }: SelectedPostProps) {
   }
 
   const formattedDate = relativeDateFormatter(postData?.created_at)
-
-  console.log(postData)
 
   return (
     <PostHeaderContainer>

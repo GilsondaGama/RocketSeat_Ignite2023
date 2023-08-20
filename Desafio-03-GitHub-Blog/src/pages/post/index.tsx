@@ -4,19 +4,8 @@ import { PostHeader } from './components/PostHeader'
 import { useCallback, useEffect, useState } from 'react'
 import { api } from '../../lib/axios'
 
-// import { SinglePost } from '../../context/IssuesContext'
-
-interface SinglePost {
-  title: string
-  body: string
-  created_at: string
-  number: number
-  html_url: string
-  comments: number
-  user: {
-    login: string
-  }
-}
+import { SinglePost } from '../../context/IssuesContext'
+import { PostContent } from './components/PostContent'
 
 const userName = import.meta.env.VITE_GITHUB_USERNAME
 const repoName = import.meta.env.VITE_GITHUB_REPONAME
@@ -38,5 +27,10 @@ export function Post() {
     getPostSelect()
   }, [getPostSelect])
 
-  return <PostHeader postData={postData} />
+  return (
+    <>
+      <PostHeader postData={postData} />
+      <PostContent content={postData.body} />
+    </>
+  )
 }
