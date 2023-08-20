@@ -1,27 +1,19 @@
-import { styled } from 'styled-components'
+import styled from 'styled-components'
 
-export const ProfileContainer = styled.div`
+export const PostHeaderContainer = styled.div`
   display: flex;
-  gap: 2rem;
-  padding: 0 2.5rem;
-
-  width: 864px;
-  height: 212px;
-  margin: 2rem auto;
-  box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
-
-  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 10.5rem;
   margin-top: -5.6rem;
+  padding: 2rem;
   border-radius: 10px;
-  background: ${(props) => props.theme['base-profile']};
 
-  img {
-    max-width: 9.25rem;
-    border-radius: 8px;
-  }
+  box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
+  background: ${(props) => props.theme['base-profile']};
 `
 
-export const ProfileDetails = styled.div`
+export const PostHeaderDetails = styled.div`
   p {
     font-size: 1rem;
     font-weight: 400;
@@ -30,8 +22,11 @@ export const ProfileDetails = styled.div`
   }
 
   header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
     margin-bottom: 0.5rem;
 
     a {
@@ -44,17 +39,17 @@ export const ProfileDetails = styled.div`
         transition: opacity 0.2s;
       }
     }
+  }
 
-    h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: ${(props) => props.theme['base-title']};
-    }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: ${(props) => props.theme['base-title']};
   }
 `
 
-export const ProfileInfo = styled.div`
+export const PostHeaderInfo = styled.div`
   display: flex;
   margin-top: 1.5rem;
   align-items: center;
@@ -64,6 +59,6 @@ export const ProfileInfo = styled.div`
     font-size: 1rem;
     font-weight: 400;
     margin-right: 1rem;
-    color: ${(props) => props.theme['base-subtitle']};
+    color: ${(props) => props.theme['base-span']};
   }
 `

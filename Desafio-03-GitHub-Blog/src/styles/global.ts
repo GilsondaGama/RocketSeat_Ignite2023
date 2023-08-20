@@ -1,10 +1,14 @@
-import { createGlobalStyle } from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ReactNode } from 'react'
+// import { ReactNode } from 'react'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
   }
 
   :focus {
@@ -21,4 +25,17 @@ export const GlobalStyle = createGlobalStyle`
   body, input, button, textarea {
     font: 400 1rem Nunito, sans-serif;
   }
+`
+
+interface StyledIconProps {
+  variant?: string
+  marginL?: string
+  marginR?: string
+}
+
+export const StyledIcon = styled(FontAwesomeIcon)<StyledIconProps>`
+  font-size: 18px;
+  color: ${(props) => props.theme[props.variant || 'base-label']};
+  margin-left: ${(props) => props.marginL || '0'};
+  margin-right: ${(props) => props.marginR || '0'};
 `

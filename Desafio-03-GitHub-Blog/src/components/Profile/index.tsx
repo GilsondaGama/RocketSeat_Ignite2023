@@ -1,11 +1,6 @@
 import { useEffect, useState, useCallback } from 'react'
 
-import {
-  ProfileContainer,
-  ProfileDetails,
-  ProfileInfo,
-  StyledIcon,
-} from './styles'
+import { ProfileContainer, ProfileDetails, ProfileInfo } from './styles'
 
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
@@ -15,6 +10,7 @@ import {
   faArrowUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons'
 import { api } from '../../lib/axios'
+import { StyledIcon } from '../../styles/global'
 
 interface GithubUser {
   avatar_url: string
@@ -51,7 +47,11 @@ export function Profile() {
 
           <a href={githubUser?.html_url} target="_blank" rel="noreferrer">
             <span>GITHUB</span>
-            <StyledIcon icon={faArrowUpRightFromSquare} variant="base-blue" />
+            <StyledIcon
+              icon={faArrowUpRightFromSquare}
+              variant="base-blue"
+              // marginL="0.5rem"
+            />
           </a>
         </header>
 
