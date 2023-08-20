@@ -1,7 +1,6 @@
 import { ReactNode, useCallback, useEffect, useState } from 'react'
 import { api } from '../lib/axios'
 import { createContext } from 'use-context-selector'
-// import { set } from 'zod'
 
 export interface Issues {
   id: number
@@ -14,11 +13,22 @@ export interface Issues {
 interface IssuesContextType {
   issues: Issues[]
   fetchIssues: (query?: string) => Promise<void>
-  singlePost: (id: number) => Promise<void>
 }
 
 interface IssuesProviderProps {
   children: ReactNode
+}
+
+export interface SinglePost {
+  title: string
+  body: string
+  created_at: string
+  number: number
+  html_url: string
+  comments: number
+  user: {
+    login: string
+  }
 }
 
 export const IssuesContext = createContext({} as IssuesContextType)
@@ -37,15 +47,6 @@ export function IssuesProvider({ children }: IssuesProviderProps) {
     setIssues(response.data.items)
   }, [])
 
-  const singlePost = useCallback(async (id: number) => {
-    const response = await api.get(
-      `/repos/${userName}/${repoName}/issues/${id}`,
-    )
-
-    console.log(response.data)
-    setIssues(response.data)
-  }, [])
-
   useEffect(() => {
     fetchIssues()
   }, [fetchIssues])
@@ -55,7 +56,6 @@ export function IssuesProvider({ children }: IssuesProviderProps) {
       value={{
         issues,
         fetchIssues,
-        singlePost,
       }}
     >
       {children}

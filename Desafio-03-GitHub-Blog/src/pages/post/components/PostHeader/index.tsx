@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 import {
   faCalendar,
   faChevronLeft,
@@ -12,14 +14,37 @@ import {
   PostHeaderDetails,
   PostHeaderInfo,
 } from './styles'
-import { useNavigate } from 'react-router-dom'
 
-export function PostHeader() {
+import { relativeDateFormatter } from '../../../../Utils/formatter'
+
+// import { SinglePost } from '../../../../context/IssuesContext'
+
+interface SinglePost {
+  title: string
+  body: string
+  created_at: string
+  number: number
+  html_url: string
+  comments: number
+  user: {
+    login: string
+  }
+}
+
+interface SelectedPostProps {
+  postData: SinglePost
+}
+
+export function PostHeader({ postData }: SelectedPostProps) {
   const navigate = useNavigate()
 
   function handleGoBack() {
     navigate(-1)
   }
+
+  const formattedDate = relativeDateFormatter(postData?.created_at)
+
+  console.log(postData)
 
   return (
     <PostHeaderContainer>
@@ -33,7 +58,7 @@ export function PostHeader() {
             />
             <span>VOLTAR</span>
           </a>
-          <a href="#" target="_blank">
+          <a href={postData.html_url} target="_blank" rel="noreferrer">
             <span>VER NO GITHUB</span>
             <StyledIcon
               icon={faUpRightFromSquare}
@@ -43,15 +68,15 @@ export function PostHeader() {
           </a>
         </header>
 
-        <h1>JavaScript data types and data structures</h1>
+        <h1>{postData.title}</h1>
 
         <PostHeaderInfo>
           <StyledIcon icon={faGithub} />
-          <span>cameronwll</span>
+          <span>{postData.user?.login}</span>
           <StyledIcon icon={faCalendar} />
-          <span>Há 1 dia</span>
+          <span>{formattedDate}</span>
           <StyledIcon icon={faComment} />
-          <span>comentários</span>
+          <span>{postData.comments} comentários</span>
         </PostHeaderInfo>
       </PostHeaderDetails>
     </PostHeaderContainer>
