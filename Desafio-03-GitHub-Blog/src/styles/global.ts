@@ -35,6 +35,6 @@ interface StyledIconProps {
 export const StyledIcon = styled(FontAwesomeIcon)<StyledIconProps>`
   font-size: 18px;
   color: ${(props) => props.theme[props.variant || 'base-label']};
-  margin-left: ${(props) => props.marginL || '0'};
-  margin-right: ${(props) => props.marginR || '0'};
+  margin-left: ${(props) => props.marginL || 0};
+  margin-right: ${(props) => props.marginR || 0};
 `

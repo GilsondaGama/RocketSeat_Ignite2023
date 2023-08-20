@@ -50,7 +50,7 @@ export function Profile() {
             <StyledIcon
               icon={faArrowUpRightFromSquare}
               variant="base-blue"
-              // marginL="0.5rem"
+              marginL="0.5rem"
             />
           </a>
         </header>

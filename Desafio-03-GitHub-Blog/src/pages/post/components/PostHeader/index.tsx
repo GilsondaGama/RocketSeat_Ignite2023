@@ -39,7 +39,7 @@ export function PostHeader({ postData }: SelectedPostProps) {
             <StyledIcon
               icon={faChevronLeft}
               variant="base-blue"
-              // marginR="0.5rem"
+              marginR="0.5rem"
             />
             <span>VOLTAR</span>
           </a>
@@ -48,7 +48,7 @@ export function PostHeader({ postData }: SelectedPostProps) {
             <StyledIcon
               icon={faUpRightFromSquare}
               variant="base-blue"
-              // marginL="0.5rem"
+              marginL="0.5rem"
             />
           </a>
         </header>
